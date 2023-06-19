@@ -22,7 +22,7 @@ To use the OCR PNG to Text Converter, follow the steps below:
 1. Clone or download the repository to your local machine.
 2. Install the necessary dependencies by running the command `pip install pillow pytesseract tkinter`.
 3. Place your PNG image files in the same directory as the script.
-4. Run the script by executing the command `python png_converter.py`.
+4. Run the script by executing the command `python main.py`.
 5. A file dialog will appear, allowing you to select one or more PNG image files.
 6. The script will process each image and extract the text using Tesseract OCR.
 7. The extracted text will be saved in separate text files with the same name as the input PNG files. The text files will be stored in a folder named "text_files" in the same directory.
