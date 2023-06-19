@@ -9,7 +9,7 @@ This Python script allows you to convert PNG image files to text using Optical C
 Before running the script, make sure you have the following installed:
 
 - Python 3 (https://www.python.org/downloads/)
-- Tesseract OCR (https://github.com/tesseract-ocr/tesseract)
+- Tesseract OCR dowlanding tutorial (https://codetoprosper.com/tesseract-ocr-for-windows)
 
 Ensure that Tesseract OCR is properly installed and the Tesseract executable file path is correctly set in the script.
 
