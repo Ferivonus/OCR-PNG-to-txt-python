@@ -1,21 +1,31 @@
 from PIL import Image
 import pytesseract
-
-# Path to the PNG file
-png_file_path = 'image.png'
+from tkinter import filedialog
+import tkinter as tk
 
 # Path to the Tesseract executable file
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-# Open the PNG file and read the text
-with Image.open(png_file_path) as img:
-    text = pytesseract.image_to_string(img, lang='eng')
+# Create a Tkinter root window
+root = tk.Tk()
+root.withdraw()
 
-# Path to the output file
-output_file_path = 'metin.txt'
+# Ask the user to select a file
+png_file_path = filedialog.askopenfilename(title='Select PNG file', filetypes=[('PNG Files', '*.png')])
 
-# Write the text to the output file
-with open(output_file_path, mode='w', encoding='utf-8') as file:
-    file.write(text)
+# Check if a file was selected
+if png_file_path:
+    # Open the selected PNG file and read the text
+    with Image.open(png_file_path) as img:
+        text = pytesseract.image_to_string(img, lang='eng')
 
-print('The text in the PNG file has been successfully written to the output file.')
+    # Path to the output file
+    output_file_path = 'metin.txt'
+
+    # Write the text to the output file
+    with open(output_file_path, mode='w', encoding='utf-8') as file:
+        file.write(text)
+
+    print('The text in the PNG file has been successfully written to the output file.')
+else:
+    print('No file selected.')
