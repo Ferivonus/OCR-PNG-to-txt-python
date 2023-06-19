@@ -2,6 +2,8 @@
 
 This Python script allows you to convert PNG image files to text using Optical Character Recognition (OCR). It uses the Tesseract OCR engine to extract text from the images.
 
+![Program Screenshot](readme_image/img.png)
+
 ## Prerequisites
 
 Before running the script, make sure you have the following installed:
