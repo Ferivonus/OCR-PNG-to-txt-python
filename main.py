@@ -16,6 +16,10 @@ png_file_paths = filedialog.askopenfilenames(title='Select PNG files', filetypes
 
 # Check if files were selected
 if png_file_paths:
+    # Create a directory to store the text files
+    output_directory = 'text_files'
+    os.makedirs(output_directory, exist_ok=True)
+
     for png_file_path in png_file_paths:
         # Open each selected PNG file and read the text
         with Image.open(png_file_path) as img:
@@ -23,7 +27,7 @@ if png_file_paths:
 
         # Create a unique output file path for each selected file
         base_filename = os.path.splitext(os.path.basename(png_file_path))[0]
-        output_file_path = base_filename + '.txt'
+        output_file_path = os.path.join(output_directory, base_filename + '.txt')
 
         # Write the text to the output file
         with open(output_file_path, mode='w', encoding='utf-8') as file:
