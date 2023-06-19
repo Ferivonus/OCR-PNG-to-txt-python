@@ -10,6 +10,7 @@ Before running the script, make sure you have the following installed:
 
 - Python 3 (https://www.python.org/downloads/)
 - Tesseract OCR dowlanding tutorial (https://codetoprosper.com/tesseract-ocr-for-windows)
+*note: you just need to dowland the app, not more like in that link.*
 
 Ensure that Tesseract OCR is properly installed and the Tesseract executable file path is correctly set in the script.
 
