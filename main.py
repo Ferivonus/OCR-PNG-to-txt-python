@@ -3,6 +3,7 @@ import pytesseract
 from tkinter import filedialog, messagebox
 import tkinter as tk
 import os
+import subprocess
 
 # Path to the Tesseract executable file
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -30,6 +31,12 @@ def convert_files():
             # Write the text to the output file
             with open(output_file_path, mode='w', encoding='utf-8') as file:
                 file.write(text)
+
+            # Open the generated text file using the default text editor
+            try:
+                subprocess.run(['start', '', output_file_path], check=True, shell=True)
+            except Exception as e:
+                print(f'Error opening file: {output_file_path}\n{e}')
 
         # Show a message box indicating the successful conversion
         messagebox.showinfo('Conversion Complete', 'PNG to TXT conversion is complete.')
